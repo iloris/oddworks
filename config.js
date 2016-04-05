@@ -8,7 +8,7 @@ const hostname = process.env.DOMAIN;
 const protocol = process.env.PROTOCOL;
 const port = env === 'test' ? null : process.env.PORT;
 const mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/device';
-const redisURL = process.env.REDIS_URI || 'redis://localhost:6379';
+const redisURL = process.env.REDIS_URI || process.env.REDIS_URL || 'redis://localhost:6379';
 const redisURI = new URI(redisURL);
 const elasticSearchHost = process.env.ELASTICSEARCH_URI || process.env.FOUNDELASTICSEARCH_URL || process.env.SEARCHBOX_URL || 'localhost:9200';
 const elasticSearchCreds = process.env.AWS_ES_CREDS ? process.env.AWS_ES_CREDS.split(':') : new Array(2);
